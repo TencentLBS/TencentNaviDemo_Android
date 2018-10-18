@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/set"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--日夜模式-->
+        <RadioGroup
+            android:id="@+id/navi_daynight_mode"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:checkedButton="@id/auto_mode"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/auto_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自动切换" />
+
+            <RadioButton
+                android:id="@+id/day_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="日间模式" />
+
+            <RadioButton
+                android:id="@+id/night_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="夜间模式" />
+        </RadioGroup>
+
+        <!--导航模式-->
+        <RadioGroup
+            android:id="@+id/navi_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/three_d_mode"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/carnaviview">
+
+            <RadioButton
+                android:id="@+id/three_d_mode"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="3D导航" />
+
+            <RadioButton
+                android:id="@+id/two_d_mode"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="2D导航" />
+
+            <RadioButton
+                android:id="@+id/over_mode"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="2D全览" />
+
+            <RadioButton
+                android:id="@+id/remaining_over_mode"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="剩余全览" />
+        </RadioGroup>
+
+        <!--线路宽度设置-->
+        <LinearLayout
+            android:id="@+id/width"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置路线宽度："
+                android:textSize="@dimen/text_size_normal"/>
+            <SeekBar
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:id="@+id/widthbar"
+                android:max="30"
+                />
+        </LinearLayout>
+
+
+        <!--线路擦除设置-->
+        <LinearLayout
+            android:id="@+id/erase"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="擦除走过路线"
+                android:textSize="@dimen/text_size_normal"
+                />
+            <Switch
+                android:id="@+id/erase_switch"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="off"
+                android:textOn="on"/>
+
+        </LinearLayout>
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:id="@+id/panel_hide"
+            android:text="隐藏导航面板"
+            android:visibility="gone"/>
+
+        <!--导航功能-->
+        <LinearLayout
+            android:id="@+id/navi_function"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/navi_corner"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:checked="true"
+                android:text="路口放大图"/>
+            <android.support.v7.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/navi_lane"
+                android:text="车道线"
+                android:checked="true"/>
+        </LinearLayout>
+
+
+        <com.tencent.map.navi.car.CarNaviView
+            android:id="@+id/carnaviview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <include
+        android:id="@+id/panel_style"
+        layout="@layout/navigation_panel_style"
+        android:visibility="gone"
+        >
+    </include>
+
+    <include
+        android:id="@+id/navi_speed_style"
+        layout="@layout/navigation_speed_style"
+        android:visibility="gone">
+
+    </include>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/navi_stop"
+        android:layout_width="114dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="stop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</android.support.constraint.ConstraintLayout>

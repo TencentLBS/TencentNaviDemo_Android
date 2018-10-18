@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!-- 标准背景色 -->
+    <color name="stand_backgroud">#F4F4F4</color>
+    <!-- 黑色 -->
+    <color name="black">#333333</color>
+    <!-- gray -->
+    <color name="gray">#E5E5E5</color>
+    <!-- 白色 -->
+    <color name="white">#FFFFFF</color>
+    <color name="light_gray">#B3B3B3</color>
+    <color name="time_gray">#808080</color>
+
+    <color name="my_blue">#3C69EF</color>
+    <color name="qq_blue">#ff0d79ff</color>
+    <color name="qq_green">#ff40d25c</color>
+
+    <color name="color_ffffff">#ffffffff</color>
+    <color name="color_ffffff_40">#40ffffff</color>
+    <color name="color_white">#ffffffff</color>
+    <color name="color_white_10">#0affffff</color>
+    <color name="color_white_15">#26ffffff</color>
+    <color name="color_white_20">#33ffffff</color>
+    <color name="color_white_30">#4cffffff</color>
+    <color name="color_white_5">#05ffffff</color>
+    <color name="color_white_50">#7fffffff</color>
+    <color name="color_white_90">#e5ffffff</color>
+
+    <color name="color_21212E_A0">#8021212e</color>
+    <color name="color_21212E">#ff21212e</color>
+    <color name="color_333333">#ff333333</color>
+    <color name="color_333333_40">#66333333</color>
+    <color name="color_3C69EF">#ff3c69ef</color>
+    <color name="color_888888">#ff888888</color>
+    <color name="color_e5e5e5">#ffe5e5e5</color>
+</resources>

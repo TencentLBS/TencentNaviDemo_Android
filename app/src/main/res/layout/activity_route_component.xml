@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/addressMode"
+        android:layout_above="@+id/route_info_layout"
+        class="com.tencent.tencentmap.mapsdk.maps.SupportMapFragment"/>
+
+    <include android:id="@+id/addressMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/navigation_info_layout"/>
+
+    <ImageView
+        android:id="@+id/traffic"
+        android:layout_width="@dimen/route_button_size"
+        android:layout_height="@dimen/route_button_size"
+        android:layout_below="@id/addressMode"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/selector_route_traffic"/>
+
+
+    <ImageView
+        android:id="@+id/preference"
+        android:layout_width="@dimen/route_button_size"
+        android:layout_height="@dimen/route_button_size"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/traffic"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/selector_route_preference" />
+
+    <ImageView
+        android:id="@+id/locate"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="100dp"
+        android:src="@drawable/selector_route_locate"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/route_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/navigation_route_info_layout"
+        android:visibility="gone"/>
+
+</RelativeLayout>

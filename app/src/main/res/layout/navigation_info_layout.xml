@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addressMode"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:alpha="0.8"
+    android:background="#ff21212e"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/exchange_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/route_from_to_exchange" />
+
+        <LinearLayout
+            android:id="@+id/from"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/exchange_btn"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/icon_from"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/route_icon_back" />
+
+            <TextView
+                android:id="@+id/search_from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/route_icon_start"
+                android:drawablePadding="6.0dip"
+                android:ellipsize="middle"
+                android:gravity="center_vertical"
+                android:hint="@string/search"
+                android:minHeight="42.0dip"
+                android:singleLine="true"
+                android:textColor="@color/color_white"
+                android:textColorHint="@color/color_ffffff_40"
+                android:textSize="@dimen/text_size_normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pass1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/from"
+            android:layout_toLeftOf="@id/exchange_btn"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/icon_pass1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/route_icon_sub_via" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0px"
+                    android:background="@color/color_ffffff_40" />
+
+                <TextView
+                    android:id="@+id/search_pass1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/route_icon_start"
+                    android:drawablePadding="6.0dip"
+                    android:ellipsize="middle"
+                    android:gravity="center_vertical"
+                    android:hint="@string/search"
+                    android:minHeight="42.0dip"
+                    android:singleLine="true"
+                    android:textColor="@color/color_white"
+                    android:textColorHint="@color/color_ffffff_40"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pass2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pass1"
+            android:layout_toLeftOf="@id/exchange_btn"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/icon_pass2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/route_icon_sub_via" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0px"
+                    android:background="@color/color_ffffff_40" />
+
+                <TextView
+                    android:id="@+id/search_pass2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/route_icon_start"
+                    android:drawablePadding="6.0dip"
+                    android:ellipsize="middle"
+                    android:gravity="center_vertical"
+                    android:hint="@string/search"
+                    android:minHeight="42.0dip"
+                    android:singleLine="true"
+                    android:textColor="@color/color_white"
+                    android:textColorHint="@color/color_ffffff_40"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pass3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pass2"
+            android:layout_toLeftOf="@id/exchange_btn"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/icon_pass3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/route_icon_sub_via" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0px"
+                    android:background="@color/color_ffffff_40" />
+
+                <TextView
+                    android:id="@+id/search_pass3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/route_icon_start"
+                    android:drawablePadding="6.0dip"
+                    android:ellipsize="middle"
+                    android:gravity="center_vertical"
+                    android:hint="@string/search"
+                    android:minHeight="42.0dip"
+                    android:singleLine="true"
+                    android:textColor="@color/color_white"
+                    android:textColorHint="@color/color_ffffff_40"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pass3"
+            android:layout_toLeftOf="@id/exchange_btn"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/icon_to"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/route_icon_add_via" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0px"
+                    android:background="@color/color_ffffff_40" />
+
+                <TextView
+                    android:id="@+id/search_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/route_icon_end"
+                    android:drawablePadding="6.0dip"
+                    android:ellipsize="middle"
+                    android:gravity="center_vertical"
+                    android:hint="@string/search"
+                    android:minHeight="42.0dip"
+                    android:singleLine="true"
+                    android:textColor="@color/color_white"
+                    android:textColorHint="@color/color_ffffff_40"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.0px"
+        android:background="@color/color_ffffff_40" />
+
+
+</LinearLayout>

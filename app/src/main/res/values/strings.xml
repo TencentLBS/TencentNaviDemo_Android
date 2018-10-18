@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">NaviDemo</string>
+    <string name="search">搜索</string>
+    <string name="current_location">当前位置</string>
+    <string name="start_navigation">开始导航</string>
+    <string name="stop_navigation">结束导航</string>
+
+    <string name="route">导航算路</string>
+    <string name="navi_time">实时导航</string>
+    <string name="navi_simu">模拟导航</string>
+
+    <string name="navi_panel">自定义UI</string>
+    <string name="navi_set">导航配置设置</string>
+    <string name="navi_component">导航组件</string>
+
+    <string name="daynightmode">设置导航日夜模式</string>
+    <string name="navimode">设置导航模式</string>
+    <string name="navifuntion">设置导航功能开关</string>
+    <string name="navi_default_res">设置是否使用默认资源</string>
+    <string name="navifixing_proportion">设置车标位置</string>
+    <string name="naviline_width">设置路线宽度</string>
+    <string name="naviline_erase">设置路线擦除</string>
+    <string name="navi_panel_hide">设置是否隐藏导航面板</string>
+
+    <string name="navi_panel_style">自定义导航面板</string>
+    <string name="navi_speed_style">自定义限速样式</string>
+    <string name="url">https://apis.map.qq.com/ws/place/v1/suggestion/?</string>
+</resources>

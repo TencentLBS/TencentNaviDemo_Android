@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="@dimen/navigation_line_width"
+    android:descendantFocusability="blocksDescendants">
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/drawer_search" />
+
+    <TextView
+        android:id="@+id/search_item_text"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:drawablePadding="6.0dip"
+        android:ellipsize="middle"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="北京故宫博物馆"
+        android:layout_marginLeft="8dp"
+        android:textColor="#2d2c2c"
+        android:textSize="@dimen/text_size_micro_ex" />
+
+</LinearLayout>
