@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.tencent.map.navi.car.CarNaviView
+            android:id="@+id/naviview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <Button
+                android:id="@+id/open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="60dp"
+                android:onClick="startSynchro"
+                android:text="开启"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/open"
+                android:onClick="closeSynchro"
+                android:text="关闭"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/internal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/close"
+                android:onClick="internalMenu"
+                android:text="时间间隔"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/updateRoute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/internal"
+                android:onClick="updateRoute"
+                android:text="上传路线"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/sync"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/updateRoute"
+                android:onClick="setSyncEnable"
+                android:text="是否同步"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/resume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/open"
+                android:layout_alignParentRight="true"
+                android:onClick="resume"
+                android:text="恢复初始态"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/calculate_route"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/resume"
+                android:onClick="calculateRoute"
+                android:text="算路"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/start_navi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/calculate_route"
+                android:onClick="startNavi"
+                android:text="开始导航"
+                android:textSize="15dp"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/simulate_navi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/start_navi"
+                android:onClick="simulateNavi"
+                android:text="模拟导航"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/stop_navi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/simulate_navi"
+                android:onClick="stopNavi"
+                android:text="结束导航"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/gt_route"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/stop_navi"
+                android:onClick="gtRoute"
+                android:text="GT算路"
+                android:textSize="15dp"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

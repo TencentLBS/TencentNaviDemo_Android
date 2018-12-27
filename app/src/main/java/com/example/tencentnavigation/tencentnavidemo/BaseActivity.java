@@ -12,6 +12,7 @@ import com.tencent.map.navi.car.CarRouteSearchOptions;
 import com.tencent.map.navi.car.DayNightMode;
 import com.tencent.map.navi.car.NaviMode;
 import com.tencent.map.navi.car.TencentCarNaviManager;
+import com.tencent.map.navi.data.AttachedLocation;
 import com.tencent.map.navi.data.NaviPoi;
 import com.tencent.map.navi.data.NaviTts;
 import com.tencent.map.navi.data.RouteData;
@@ -156,6 +157,11 @@ public class BaseActivity extends AppCompatActivity {
 
         @Override
         public void onUpdateRoadType(int i) {
+
+        }
+
+        @Override
+        public void onUpdateAttachedLocation(AttachedLocation attachedLocation) {
 
         }
     };

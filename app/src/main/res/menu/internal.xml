@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="1s"
+        android:id="@+id/time_1" />
+
+    <item
+        android:title="2s"
+        android:id="@+id/time_2" />
+
+    <item
+        android:title="3s"
+        android:id="@+id/time_3" />
+
+    <item
+        android:title="5s"
+        android:id="@+id/time_5" />
+
+    <item
+        android:title="10s"
+        android:id="@+id/time_10" />
+
+    <item
+        android:title="20s"
+        android:id="@+id/time_20" />
+
+    <item
+        android:title="55s"
+        android:id="@+id/time_55" />
+
+    <item
+        android:title="1200s"
+        android:id="@+id/time_1200" />
+
+</menu>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="偏航重算"
+        android:id="@+id/type_1" />
+
+    <item
+        android:title="其他重算"
+        android:id="@+id/type_2" />
+
+    <item
+        android:title="type:3"
+        android:id="@+id/type_3" />
+
+</menu>

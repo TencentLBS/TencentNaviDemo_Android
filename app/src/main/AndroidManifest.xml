@@ -43,7 +43,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="TencentMapSDK"
-            android:value="KXQBZ-35S6W-4Z5RS-RA67Q-BH3JH-XTBLS" />
+            android:value="OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77" />
 
         <activity android:name=".IndexActivity">
             <intent-filter>
@@ -72,6 +72,9 @@
         <activity android:name=".NaviPanelStyleActivity"></activity>
         <activity android:name=".NaviSpeedStyleActivity"></activity>
         <activity android:name=".SetPanelHideActivity"></activity>
+        <activity android:name=".DriverPassengerShowActivity" />
+        <activity android:name=".DriverActivity" />
+        <activity android:name=".PassengerActivity"></activity>
     </application>
 
 </manifest>

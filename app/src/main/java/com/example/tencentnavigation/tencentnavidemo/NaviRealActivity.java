@@ -19,6 +19,7 @@ import com.tencent.map.navi.TencentRouteSearchCallback;
 import com.tencent.map.navi.car.CarNaviView;
 import com.tencent.map.navi.car.CarRouteSearchOptions;
 import com.tencent.map.navi.car.TencentCarNaviManager;
+import com.tencent.map.navi.data.AttachedLocation;
 import com.tencent.map.navi.data.GpsLocation;
 import com.tencent.map.navi.data.NaviPoi;
 import com.tencent.map.navi.data.NaviTts;
@@ -234,6 +235,11 @@ public class NaviRealActivity extends AppCompatActivity implements View.OnClickL
 
         @Override
         public void onUpdateRoadType(int i) {
+
+        }
+
+        @Override
+        public void onUpdateAttachedLocation(AttachedLocation attachedLocation) {
 
         }
     };
