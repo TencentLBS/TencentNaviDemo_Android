@@ -61,9 +61,9 @@ public class DriverActivity extends Activity {
     private LatLng end = new LatLng(39.984072,116.307780);   // 39.985021, 116.308452  36.095586,120.132321
 
     private TencentLocusSynchro tencentLocusSynchro;
-    private String orderId = "zjy_005";
+    private String orderId = "";
     private int orderStatus = Order.STATUS_CHARGING_STARTED;
-    private String driverId = "OD_zjy_005_10001";
+    private String driverId = "";
     private int driverStatus = Order.DRIVER_STATUS_SERVING;
     private boolean enable = true;
     private String routeId = "100000";

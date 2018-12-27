@@ -24,5 +24,16 @@
 
     <string name="navi_panel_style">自定义导航面板</string>
     <string name="navi_speed_style">自定义限速样式</string>
+
+    <string name="navi_addnew_style">新加功能</string>
+    <string name="navi_bounce_style">设置用户拖动地图进入回弹模式</string>
+    <string name="navi_compassmarker_hide">设置是否显示小车罗盘marker</string>
+    <string name="navi_eyemarker_hide">设置是否显示电子眼marker</string>
+    <string name="navi_turnarrow_hide">设置是否显示地图路线上的白色转向箭头</string>
+    <string name="navi_regionmargin_hide">设置导航路线显示区域距离屏幕四周的边距</string>
+    <string name="navi_updateExtraPoints_hide">设置全览模式坐标点显示在可视区域内和清除地图中可视区域内的点</string>
+
+
     <string name="url">https://apis.map.qq.com/ws/place/v1/suggestion/?</string>
+    <string name="title_activity_eye_marker_visible">EyeMarkerVisibleActivity</string>
 </resources>

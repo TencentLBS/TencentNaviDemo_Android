@@ -100,6 +100,144 @@
         </LinearLayout>
 
 
+        <!--地图进入回弹模式-->
+        <LinearLayout
+            android:id="@+id/bounce"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置地图进入回弹模式:"
+                android:textSize="@dimen/text_size_normal"/>
+            <SeekBar
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:id="@+id/bouncebar"
+                android:max="10"
+                android:min="1"
+                />
+        </LinearLayout>
+
+        <!--设置是否显示小车罗盘marker-->
+        <LinearLayout
+            android:id="@+id/marker_visible"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置是否显示小车罗盘marker"
+                android:textSize="@dimen/text_size_normal"
+                />
+            <Switch
+                android:id="@+id/marker_visible_switch"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="off"
+                android:textOn="on"/>
+        </LinearLayout>
+
+        <!--设置是否显示电子眼marker-->
+        <LinearLayout
+            android:id="@+id/eye_marker_visible"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置是否显示电子眼marker"
+                android:textSize="@dimen/text_size_normal"
+                />
+            <Switch
+                android:id="@+id/eye_marker_visible_switch"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="off"
+                android:textOn="on"/>
+        </LinearLayout>
+
+        <!--设置导航路线显示区域距离屏幕四周的边距-->
+        <LinearLayout
+            android:id="@+id/turn_visible_margin"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/button_visible_margin"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置导航路线显示区域距离屏幕四周的边距"
+                />
+        </LinearLayout>
+
+
+        <!--在剩余全览模式清除地图中可视区域内的点-->
+        <LinearLayout
+            android:id="@+id/turn_clear_map"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/button_add_map"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加"
+                />
+
+            <Button
+                android:id="@+id/button_clear_map"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="清除"
+                />
+        </LinearLayout>
+
+
+        <!--设置是否显示地图路线上的白色转向箭头-->
+        <LinearLayout
+            android:id="@+id/turn_arrow_visible"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置是否显示地图路线上的白色转向箭头"
+                android:textSize="@dimen/text_size_normal"
+                />
+            <Switch
+                android:id="@+id/turn_arrow_visible_switch"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="off"
+                android:textOn="on"/>
+        </LinearLayout>
+
+
         <!--线路擦除设置-->
         <LinearLayout
             android:id="@+id/erase"

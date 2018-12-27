@@ -40,8 +40,8 @@ public class PassengerActivity extends Activity implements TencentLocationListen
     private TencentLocationRequest request = TencentLocationRequest.create();
     private TencentLocationManager locationManager = null;
     private TencentLocusSynchro tencentLocusSynchro;
-    private String orderId = "zjy_005";
-    private String passengerId = "OU_zjy_005_1";
+    private String orderId = "";
+    private String passengerId = "";
     private int orderStatus = Order.STATUS_CHARGING_STARTED;
     private MarkerTranslateAnimator mTranslateAnimator;
     private Marker driver;

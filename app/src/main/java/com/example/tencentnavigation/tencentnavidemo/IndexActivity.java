@@ -81,6 +81,14 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
         strings.add(getString(R.string.navi_speed_style));
         strings.add("司乘同显");
 
+        //新加功能
+        strings.add(getString(R.string.navi_bounce_style));
+        strings.add(getString(R.string.navi_compassmarker_hide));
+        strings.add(getString(R.string.navi_eyemarker_hide));
+        strings.add(getString(R.string.navi_turnarrow_hide));
+        strings.add(getString(R.string.navi_regionmargin_hide));
+        strings.add(getString(R.string.navi_updateExtraPoints_hide));
+
         return strings;
     }
 
@@ -161,6 +169,36 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
                 //司乘同显
                 Intent DriverActivity = new Intent(this,DriverPassengerShowActivity .class);
                 startActivity(DriverActivity);
+                break;
+            case 17:
+                //设置用户拖动地图进入回弹模式
+                Intent NaviBounceStyle = new Intent(this, NaviBounceStyleActivity.class);
+                startActivity(NaviBounceStyle);
+                break;
+            case 18:
+                //设置是否显示小车罗盘marker
+                Intent MarkerVisivle = new Intent(this, CompassMarkerVisibleActivity.class);
+                startActivity(MarkerVisivle);
+                break;
+            case 19:
+                //设置是否显示电子眼marker
+                Intent EyeMarkerVisivle = new Intent(this, ElectronicEyeMarkerVisibleActivity.class);
+                startActivity(EyeMarkerVisivle);
+                break;
+            case 20:
+                //设置是否显示地图路线上的白色转向箭头
+                Intent TurnArrowVisivle = new Intent(this, TurnArrowVisibleActivity.class);
+                startActivity(TurnArrowVisivle);
+                break;
+            case 21:
+                //设置导航路线显示区域距离屏幕四周的边距。
+                Intent VisibleRegionMargin = new Intent(this, VisibleRegionMarginActivity.class);
+                startActivity(VisibleRegionMargin);
+                break;
+            case 22:
+                //在剩余全览模式下,显示在可视区域内开发者传入的坐标点和清除地图中可视区域内的点。
+                Intent updateExtraPoints = new Intent(this, UpdateExtraPointsInVisibleActivity.class);
+                startActivity(updateExtraPoints);
                 break;
         }
     }

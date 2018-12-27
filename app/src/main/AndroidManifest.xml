@@ -43,7 +43,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="TencentMapSDK"
-            android:value="OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77" />
+            android:value="您的key" />
 
         <activity android:name=".IndexActivity">
             <intent-filter>
@@ -52,29 +52,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RouteActivity"></activity>
+        <activity android:name=".RouteActivity" />
 
         <!-- 导航组件 -->
-        <activity android:name=".RouteComponentActivity"></activity>
-        <activity android:name=".NaviComponentActivity"></activity>
-        <activity android:name=".SettingsComponentActivity"></activity>
+        <activity android:name=".RouteComponentActivity" />
+        <activity android:name=".NaviComponentActivity" />
+        <activity android:name=".SettingsComponentActivity" />
         <!-- 检索 -->
-        <activity android:name=".LocationSearchActivity"></activity>
-        <activity android:name=".NaviRealActivity"></activity>
-        <activity android:name=".NaviSimuActivity"></activity>
-        <activity android:name=".SetDayNightModeActivity"></activity>
-        <activity android:name=".SetNaviModeActivity"></activity>
-        <activity android:name=".SetNaviFunctionPowerActivity"></activity>
-        <activity android:name=".SetDefaultResouceActivity"></activity>
-        <activity android:name=".SetNaviFixingProportionActivity"></activity>
-        <activity android:name=".SetLineEraseActivity"></activity>
-        <activity android:name=".SetLineWidthActivity"></activity>
-        <activity android:name=".NaviPanelStyleActivity"></activity>
-        <activity android:name=".NaviSpeedStyleActivity"></activity>
-        <activity android:name=".SetPanelHideActivity"></activity>
+        <activity android:name=".LocationSearchActivity" />
+        <activity android:name=".NaviRealActivity" />
+        <activity android:name=".NaviSimuActivity" />
+        <activity android:name=".SetDayNightModeActivity" />
+        <activity android:name=".SetNaviModeActivity" />
+        <activity android:name=".SetNaviFunctionPowerActivity" />
+        <activity android:name=".SetDefaultResouceActivity" />
+        <activity android:name=".SetNaviFixingProportionActivity" />
+        <activity android:name=".SetLineEraseActivity" />
+        <activity android:name=".SetLineWidthActivity" />
+        <activity android:name=".NaviPanelStyleActivity" />
+        <activity android:name=".NaviSpeedStyleActivity" />
+        <activity android:name=".SetPanelHideActivity" />
         <activity android:name=".DriverPassengerShowActivity" />
         <activity android:name=".DriverActivity" />
-        <activity android:name=".PassengerActivity"></activity>
+        <activity android:name=".PassengerActivity" />
+        <activity android:name=".NaviBounceStyleActivity" />
+        <activity android:name=".CompassMarkerVisibleActivity" />
+        <activity android:name=".ElectronicEyeMarkerVisibleActivity" />
+        <activity android:name=".TurnArrowVisibleActivity" />
+        <activity android:name=".VisibleRegionMarginActivity" />
+        <activity android:name=".UpdateExtraPointsInVisibleActivity"></activity>
     </application>
 
 </manifest>
