@@ -12,6 +12,7 @@ import android.widget.Button;
 public class NaviSimuActivity extends BaseActivity implements AdapterView.OnClickListener{
 
     private Button stopBtn;
+    private Button clear_ui;
 
 
     @Override
@@ -20,8 +21,11 @@ public class NaviSimuActivity extends BaseActivity implements AdapterView.OnClic
 
 
         stopBtn = findViewById(R.id.navi_stop);
+        clear_ui = findViewById(R.id.clear_ui);
         stopBtn.setVisibility(View.VISIBLE);
+        clear_ui.setVisibility(View.VISIBLE);
         stopBtn.setOnClickListener(this);
+        clear_ui.setOnClickListener(this);
 
     }
 
@@ -32,6 +36,9 @@ public class NaviSimuActivity extends BaseActivity implements AdapterView.OnClic
             case R.id.navi_stop:
                 //停止模拟导航
                 tencentCarNaviManager.stopSimulateNavi();
+                break;
+            case R.id.clear_ui:
+                carNaviView.clearAllRouteUI();
                 break;
         }
     }

@@ -40,7 +40,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
     implementation 'com.tencent.map:tencent-map-vector-sdk:4.1.3'
-    implementation 'com.tencent.map:tencent-map-nav-sdk:5.0.5.1'
+    implementation 'com.tencent.map:tencent-map-nav-sdk:5.0.6.2-SNAPSHOT'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'

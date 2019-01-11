@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -52,29 +51,29 @@
             <RadioButton
                 android:id="@+id/three_d_mode"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="3D导航" />
 
             <RadioButton
                 android:id="@+id/two_d_mode"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="2D导航" />
 
             <RadioButton
                 android:id="@+id/over_mode"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="2D全览" />
 
             <RadioButton
                 android:id="@+id/remaining_over_mode"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="剩余全览" />
         </RadioGroup>
 
@@ -83,20 +82,21 @@
             android:id="@+id/width"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:visibility="gone"
-            android:gravity="center_vertical">
+            android:visibility="gone">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="设置路线宽度："
-                android:textSize="@dimen/text_size_normal"/>
+                android:textSize="@dimen/text_size_normal" />
+
             <SeekBar
+                android:id="@+id/widthbar"
                 android:layout_width="200dp"
                 android:layout_height="30dp"
-                android:id="@+id/widthbar"
-                android:max="30"
-                />
+                android:max="30" />
         </LinearLayout>
 
 
@@ -105,21 +105,22 @@
             android:id="@+id/bounce"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:visibility="gone"
-            android:gravity="center_vertical">
+            android:visibility="gone">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="设置地图进入回弹模式:"
-                android:textSize="@dimen/text_size_normal"/>
+                android:textSize="@dimen/text_size_normal" />
+
             <SeekBar
+                android:id="@+id/bouncebar"
                 android:layout_width="200dp"
                 android:layout_height="30dp"
-                android:id="@+id/bouncebar"
                 android:max="10"
-                android:min="1"
-                />
+                android:min="1" />
         </LinearLayout>
 
         <!--设置是否显示小车罗盘marker-->
@@ -127,22 +128,23 @@
             android:id="@+id/marker_visible"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:visibility="gone"
-            android:gravity="center_vertical">
+            android:visibility="gone">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="设置是否显示小车罗盘marker"
-                android:textSize="@dimen/text_size_normal"
-                />
+                android:textSize="@dimen/text_size_normal" />
+
             <Switch
                 android:id="@+id/marker_visible_switch"
-                android:paddingLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
                 android:textOff="off"
-                android:textOn="on"/>
+                android:textOn="on" />
         </LinearLayout>
 
         <!--设置是否显示电子眼marker-->
@@ -150,22 +152,23 @@
             android:id="@+id/eye_marker_visible"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:visibility="gone"
-            android:gravity="center_vertical">
+            android:visibility="gone">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="设置是否显示电子眼marker"
-                android:textSize="@dimen/text_size_normal"
-                />
+                android:textSize="@dimen/text_size_normal" />
+
             <Switch
                 android:id="@+id/eye_marker_visible_switch"
-                android:paddingLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
                 android:textOff="off"
-                android:textOn="on"/>
+                android:textOn="on" />
         </LinearLayout>
 
         <!--设置导航路线显示区域距离屏幕四周的边距-->
@@ -173,17 +176,16 @@
             android:id="@+id/turn_visible_margin"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:visibility="gone"
-            android:gravity="center_vertical">
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/button_visible_margin"
-                android:paddingLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="设置导航路线显示区域距离屏幕四周的边距"
-                />
+                android:paddingLeft="5dp"
+                android:text="设置导航路线显示区域距离屏幕四周的边距" />
         </LinearLayout>
 
 
@@ -192,25 +194,23 @@
             android:id="@+id/turn_clear_map"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:visibility="gone"
-            android:gravity="center_vertical">
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/button_add_map"
-                android:paddingLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="添加"
-                />
+                android:paddingLeft="5dp"
+                android:text="添加" />
 
             <Button
                 android:id="@+id/button_clear_map"
-                android:paddingLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="清除"
-                />
+                android:paddingLeft="5dp"
+                android:text="清除" />
         </LinearLayout>
 
 
@@ -219,22 +219,23 @@
             android:id="@+id/turn_arrow_visible"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:visibility="gone"
-            android:gravity="center_vertical">
+            android:visibility="gone">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="设置是否显示地图路线上的白色转向箭头"
-                android:textSize="@dimen/text_size_normal"
-                />
+                android:textSize="@dimen/text_size_normal" />
+
             <Switch
                 android:id="@+id/turn_arrow_visible_switch"
-                android:paddingLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
                 android:textOff="off"
-                android:textOn="on"/>
+                android:textOn="on" />
         </LinearLayout>
 
 
@@ -243,30 +244,32 @@
             android:id="@+id/erase"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:visibility="gone"
-            android:gravity="center_vertical">
+            android:visibility="gone">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="擦除走过路线"
-                android:textSize="@dimen/text_size_normal"
-                />
+                android:textSize="@dimen/text_size_normal" />
+
             <Switch
                 android:id="@+id/erase_switch"
-                android:paddingLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
                 android:textOff="off"
-                android:textOn="on"/>
+                android:textOn="on" />
 
         </LinearLayout>
+
         <Switch
+            android:id="@+id/panel_hide"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:id="@+id/panel_hide"
             android:text="隐藏导航面板"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <!--导航功能-->
         <LinearLayout
@@ -281,13 +284,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:checked="true"
-                android:text="路口放大图"/>
+                android:text="路口放大图" />
+
             <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/navi_lane"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/navi_lane"
-                android:text="车道线"
-                android:checked="true"/>
+                android:checked="true"
+                android:text="车道线" />
         </LinearLayout>
 
 
@@ -301,9 +305,7 @@
     <include
         android:id="@+id/panel_style"
         layout="@layout/navigation_panel_style"
-        android:visibility="gone"
-        >
-    </include>
+        android:visibility="gone"></include>
 
     <include
         android:id="@+id/navi_speed_style"
@@ -317,15 +319,21 @@
         android:id="@+id/navi_stop"
         android:layout_width="114dp"
         android:layout_height="41dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="stop"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
+    <Button
+        android:id="@+id/clear_ui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="清除UI" />
 
 
 </android.support.constraint.ConstraintLayout>
