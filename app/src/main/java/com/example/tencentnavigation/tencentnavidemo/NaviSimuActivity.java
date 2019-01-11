@@ -38,7 +38,9 @@ public class NaviSimuActivity extends BaseActivity implements AdapterView.OnClic
                 tencentCarNaviManager.stopSimulateNavi();
                 break;
             case R.id.clear_ui:
+               //清楚ui
                 carNaviView.clearAllRouteUI();
+
                 break;
         }
     }

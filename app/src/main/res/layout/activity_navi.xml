@@ -333,7 +333,10 @@
         android:id="@+id/clear_ui"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="清除UI" />
+        android:text="清除UI"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="1dp" />
 
 
 </android.support.constraint.ConstraintLayout>
