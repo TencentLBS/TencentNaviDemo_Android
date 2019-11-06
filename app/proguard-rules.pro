@@ -19,13 +19,20 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--dontwarn com.qq.taf.**
--keep class com.qq.taf.** { *; }
-
--keep public class com.tencent.map.ama.navigation.data.NavigationJNI {*;}
--keep public class com.google.webp.libwebpJNI {*;}
-
--dontwarn sun.misc.Unsafe
 -keep, includedescriptorclasses public class com.tencent.map.lib.gl.JNI { *;}
 -keep, includedescriptorclasses public class com.tencent.map.lib.gl.* { *;}
 -keep, includedescriptorclasses public class com.tencent.tencentmap.mapsdk.maps.a.* { *;}
+
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}
+-keep class android.support.**{*;}
+
+-keep class com.tencent.map.navi.surport.** {
+    *;
+}
+
+-keep class com.tencent.map.screen.** {
+    *;
+}
+
+-keep class com.tencent.beacon.** { *; }

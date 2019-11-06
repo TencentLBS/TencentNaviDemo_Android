@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 import com.tencent.map.navi.car.DayNightMode;
 import com.tencent.map.navi.car.NaviMode;
-import com.tencent.map.util.CommonUtil;
+import com.tencent.navi.surport.utils.DeviceUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -157,7 +157,7 @@ public class SettingsComponentActivity extends Activity implements View.OnClickL
     }
 
     private void initDeviceInfo() {
-        String imei = CommonUtil.getImei(this);
+        String imei = DeviceUtils.getImei(this);
         TextView textView = findViewById(R.id.deviceInfo);
         textView.setText("IMEI: " + imei);
     }

@@ -16,6 +16,7 @@ import com.tencent.map.navi.data.AttachedLocation;
 import com.tencent.map.navi.data.NaviPoi;
 import com.tencent.map.navi.data.NaviTts;
 import com.tencent.map.navi.data.RouteData;
+import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 
 import java.util.ArrayList;
 
@@ -162,6 +163,11 @@ public class BaseActivity extends AppCompatActivity {
 
         @Override
         public void onUpdateAttachedLocation(AttachedLocation attachedLocation) {
+
+        }
+
+        @Override
+        public void onFollowRouteClick(String s, ArrayList<LatLng> arrayList) {
 
         }
     };

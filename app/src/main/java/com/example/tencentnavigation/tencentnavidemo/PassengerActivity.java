@@ -177,6 +177,16 @@ public class PassengerActivity extends Activity implements TencentLocationListen
                     Log.e(TAG, "onRouteUploadComplete");
                 }
 
+                @Override
+                public void onLocationUploadFailed(RouteUploadError routeUploadError) {
+
+                }
+
+                @Override
+                public void onLocationUploadComplete() {
+
+                }
+
             });
         } catch (Exception e) {
             e.printStackTrace();

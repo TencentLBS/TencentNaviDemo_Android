@@ -38,7 +38,7 @@ import com.tencent.map.navi.data.NaviTts;
 import com.tencent.map.navi.data.NavigationData;
 import com.tencent.map.navi.data.RouteData;
 import com.tencent.map.navi.data.TrafficItem;
-import com.tencent.map.util.NaviUtil;
+import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -456,6 +456,11 @@ public class NaviComponentActivity extends AppCompatActivity {
         public void onUpdateAttachedLocation(AttachedLocation attachedLocation) {
 
         }
+
+        @Override
+        public void onFollowRouteClick(String s, ArrayList<LatLng> arrayList) {
+
+        }
     };
 
     /**
@@ -510,7 +515,7 @@ public class NaviComponentActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onUpdateTraffic(int totalDistance, int remainDistance, ArrayList<TrafficItem> trafficItems) {
+        public void onUpdateTraffic(String s, int i, int i1, ArrayList<LatLng> arrayList, ArrayList<TrafficItem> arrayList1, boolean b) {
 
         }
 

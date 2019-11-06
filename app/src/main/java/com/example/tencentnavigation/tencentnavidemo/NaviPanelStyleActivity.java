@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.tencent.map.navi.INaviView;
 import com.tencent.map.navi.data.NavigationData;
 import com.tencent.map.navi.data.TrafficItem;
+import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -111,7 +112,7 @@ public class NaviPanelStyleActivity extends BaseActivity {
         }
 
         @Override
-        public void onUpdateTraffic(int i, int i1, ArrayList<TrafficItem> arrayList) {
+        public void onUpdateTraffic(String s, int i, int i1, ArrayList<LatLng> arrayList, ArrayList<TrafficItem> arrayList1, boolean b) {
 
         }
     };

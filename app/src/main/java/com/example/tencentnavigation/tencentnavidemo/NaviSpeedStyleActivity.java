@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.tencent.map.navi.INaviView;
 import com.tencent.map.navi.data.NavigationData;
 import com.tencent.map.navi.data.TrafficItem;
+import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 
 import java.util.ArrayList;
 
@@ -23,7 +24,7 @@ public class NaviSpeedStyleActivity extends BaseActivity {
         initView();
     }
 
-    private void initView(){
+    private void initView() {
         speedBar = findViewById(R.id.navi_speed_style);
         roadName = findViewById(R.id.navi_road_name);
         limitSpeed = findViewById(R.id.navi_limit_speed);
@@ -31,7 +32,7 @@ public class NaviSpeedStyleActivity extends BaseActivity {
 
         speedBar.setVisibility(View.VISIBLE);
 
-        if(tencentCarNaviManager!=null){
+        if (tencentCarNaviManager != null) {
             //添加导航协议
             tencentCarNaviManager.addNaviView(speedView);
         }
@@ -46,8 +47,8 @@ public class NaviSpeedStyleActivity extends BaseActivity {
         @Override
         public void onUpdateNavigationData(NavigationData navigationData) {
             roadName.setText(navigationData.getCurrentRoadName());
-            speed.setText(navigationData.getCurrentSpeed()+"");
-            limitSpeed.setText(navigationData.getLimitSpeed()+"");
+            speed.setText(navigationData.getCurrentSpeed() + "");
+            limitSpeed.setText(navigationData.getLimitSpeed() + "");
         }
 
         @Override
@@ -71,7 +72,7 @@ public class NaviSpeedStyleActivity extends BaseActivity {
         }
 
         @Override
-        public void onUpdateTraffic(int i, int i1, ArrayList<TrafficItem> arrayList) {
+        public void onUpdateTraffic(String s, int i, int i1, ArrayList<LatLng> arrayList, ArrayList<TrafficItem> arrayList1, boolean b) {
 
         }
     };

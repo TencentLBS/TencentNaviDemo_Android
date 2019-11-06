@@ -30,7 +30,6 @@ import com.tencent.map.geolocation.TencentLocation;
 import com.tencent.map.geolocation.TencentLocationListener;
 import com.tencent.map.geolocation.TencentLocationManager;
 import com.tencent.map.geolocation.TencentLocationRequest;
-import com.tencent.map.log.TLog;
 import com.tencent.map.navi.TencentRouteSearchCallback;
 import com.tencent.map.navi.car.CarRouteSearchOptions;
 import com.tencent.map.navi.car.DayNightMode;
@@ -39,8 +38,6 @@ import com.tencent.map.navi.car.TencentCarNaviManager;
 import com.tencent.map.navi.data.GpsLocation;
 import com.tencent.map.navi.data.NaviPoi;
 import com.tencent.map.navi.data.RouteData;
-import com.tencent.map.util.CommonUtil;
-import com.tencent.map.util.StorageUtil;
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdateFactory;
 import com.tencent.tencentmap.mapsdk.maps.SupportMapFragment;
 import com.tencent.tencentmap.mapsdk.maps.TencentMap;
@@ -157,11 +154,6 @@ public class RouteComponentActivity extends AppCompatActivity implements Tencent
             EasyPermissions.requestPermissions(this, "必要的权限", 0, perms);
         }
 
-        //初始化log位置
-        String rootPath = StorageUtil.getStoragePath(this);
-        TLog.init(rootPath, CommonUtil.getPackageName(this), CommonUtil.getSDKVersion(), 1000);
-        TLog.setLogLevel(BuildConfig.DEBUG ? TLog.DEV : TLog.USR);// 编译时改变log level
-
         initViews();
         initTencentNavigation();
         mSearchViewFrom.setText(R.string.current_location);
@@ -189,8 +181,6 @@ public class RouteComponentActivity extends AppCompatActivity implements Tencent
     @Override
     protected void onDestroy() {
         mTencentCarNaviManager = null;
-        TLog.flushLog();
-        TLog.quit();
         super.onDestroy();
     }
 

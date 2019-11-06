@@ -24,6 +24,7 @@ import com.tencent.map.navi.data.GpsLocation;
 import com.tencent.map.navi.data.NaviPoi;
 import com.tencent.map.navi.data.NaviTts;
 import com.tencent.map.navi.data.RouteData;
+import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -240,6 +241,11 @@ public class NaviRealActivity extends AppCompatActivity implements View.OnClickL
 
         @Override
         public void onUpdateAttachedLocation(AttachedLocation attachedLocation) {
+
+        }
+
+        @Override
+        public void onFollowRouteClick(String s, ArrayList<LatLng> arrayList) {
 
         }
     };

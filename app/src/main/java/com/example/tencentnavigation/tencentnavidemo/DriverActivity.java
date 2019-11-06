@@ -17,7 +17,6 @@ import com.tencent.map.locussynchro.model.RouteUploadError;
 import com.tencent.map.locussynchro.model.SyncData;
 import com.tencent.map.locussynchro.model.SynchroLocation;
 import com.tencent.map.locussynchro.model.SynchroRoute;
-import com.tencent.map.log.TLog;
 import com.tencent.map.navi.DayNightModeChangeCallback;
 import com.tencent.map.navi.INaviView;
 import com.tencent.map.navi.TencentNaviCallback;
@@ -31,8 +30,6 @@ import com.tencent.map.navi.data.NaviTts;
 import com.tencent.map.navi.data.NavigationData;
 import com.tencent.map.navi.data.RouteData;
 import com.tencent.map.navi.data.TrafficItem;
-import com.tencent.map.util.CommonUtil;
-import com.tencent.map.util.StorageUtil;
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdateFactory;
 import com.tencent.tencentmap.mapsdk.maps.TencentMap;
 import com.tencent.tencentmap.mapsdk.maps.model.BitmapDescriptorFactory;
@@ -74,11 +71,6 @@ public class DriverActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver);
-
-        // 初始化log位置
-        String rootPath = StorageUtil.getStoragePath(this);
-        TLog.init(rootPath, CommonUtil.getPackageName(this), CommonUtil.getSDKVersion(), 1000);
-        TLog.setLogLevel(BuildConfig.DEBUG ? TLog.DEV : TLog.USR); // 编译时改变log level
 
         initTencentNavigation();
         initMapSetting();
@@ -214,6 +206,16 @@ public class DriverActivity extends Activity {
                 @Override
                 public void onRouteUploadComplete() {
                     Log.e(TAG, "onRouteUploadComplete");
+                }
+
+                @Override
+                public void onLocationUploadFailed(RouteUploadError routeUploadError) {
+
+                }
+
+                @Override
+                public void onLocationUploadComplete() {
+
                 }
             });
         } catch (Exception e) {
@@ -445,6 +447,11 @@ public class DriverActivity extends Activity {
         }
 
         @Override
+        public void onFollowRouteClick(String s, ArrayList<LatLng> arrayList) {
+
+        }
+
+        @Override
         public void onStartNavi() {
             String msg = "onStartNavi";
             Log.d(TAG, msg);
@@ -569,8 +576,6 @@ public class DriverActivity extends Activity {
         if (carNaviView != null) {
             carNaviView.onDestroy();
         }
-        TLog.flushLog();
-        TLog.quit();
         super.onDestroy();
     }
 
@@ -601,7 +606,7 @@ public class DriverActivity extends Activity {
         }
 
         @Override
-        public void onUpdateTraffic(int i, int i1, ArrayList<TrafficItem> arrayList) {
+        public void onUpdateTraffic(String s, int i, int i1, ArrayList<LatLng> arrayList, ArrayList<TrafficItem> arrayList1, boolean b) {
 
         }
 
