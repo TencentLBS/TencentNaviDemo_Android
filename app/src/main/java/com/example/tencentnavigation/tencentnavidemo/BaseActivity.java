@@ -3,14 +3,12 @@ package com.example.tencentnavigation.tencentnavidemo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Window;
+import android.util.Log;
 
 import com.tencent.map.navi.TencentNaviCallback;
 import com.tencent.map.navi.TencentRouteSearchCallback;
 import com.tencent.map.navi.car.CarNaviView;
 import com.tencent.map.navi.car.CarRouteSearchOptions;
-import com.tencent.map.navi.car.DayNightMode;
-import com.tencent.map.navi.car.NaviMode;
 import com.tencent.map.navi.car.TencentCarNaviManager;
 import com.tencent.map.navi.data.AttachedLocation;
 import com.tencent.map.navi.data.NaviPoi;
@@ -41,7 +39,7 @@ public class BaseActivity extends AppCompatActivity {
     /**
      * 初始化TencentCarNaviManager，实例化CarNaviView
      */
-    private void initManager(){
+    private void initManager() {
         //初始化TencentCarNaviManager
         tencentCarNaviManager = new TencentCarNaviManager(this);
         carNaviView = findViewById(R.id.carnaviview);
@@ -56,16 +54,16 @@ public class BaseActivity extends AppCompatActivity {
     /**
      * 设置行驶路线
      */
-    private void initRoute(){
+    private void initRoute() {
 
         //定义起终点
-        NaviPoi start = new NaviPoi(39.984110, 116.307590);
-        NaviPoi dest = new NaviPoi(39.994868, 116.406058);
+        NaviPoi start = new NaviPoi(40.042845, 116.275763);
+        NaviPoi dest = new NaviPoi(40.05001, 116.28296);
 
-        //设置途径点
-        ArrayList<NaviPoi> wayPoints = new ArrayList<NaviPoi>(); // 途经点
-        wayPoints.add(new NaviPoi(39.994169,116.381199));//添加第一个途径点
-        wayPoints.add(new NaviPoi(39.994926,116.394138));//添加第二个途径点
+//        //设置途径点
+//        ArrayList<NaviPoi> wayPoints = new ArrayList<NaviPoi>(); // 途经点
+//        wayPoints.add(new NaviPoi(39.994169, 116.381199));//添加第一个途径点
+//        wayPoints.add(new NaviPoi(39.994926, 116.394138));//添加第二个途径点
 
         //算路配置
         CarRouteSearchOptions options = CarRouteSearchOptions.create();
@@ -73,8 +71,8 @@ public class BaseActivity extends AppCompatActivity {
 
         //发起路线规划
         try {
-            tencentCarNaviManager.searchRoute(start, dest, wayPoints, options, routeSearchCallback);
-        }catch (Exception e){
+            tencentCarNaviManager.searchRoute(start, dest, null, options, routeSearchCallback);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -143,12 +141,14 @@ public class BaseActivity extends AppCompatActivity {
         @Override
         public int onVoiceBroadcast(NaviTts naviTts) {
             //tts播报回调
+            Log.d("navitest", "onVoiceBroadcast" + naviTts.getText());
             return 0;
         }
 
         @Override
         public void onArrivedDestination() {
             //到达目的地回调
+            Log.d("navitest", "onArrivedDestination");
         }
 
         @Override
@@ -177,7 +177,7 @@ public class BaseActivity extends AppCompatActivity {
      */
     @Override
     protected void onStart() {
-        if(carNaviView!=null){
+        if (carNaviView != null) {
             carNaviView.onStart();
         }
         super.onStart();
@@ -185,7 +185,7 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
-        if(carNaviView!=null){
+        if (carNaviView != null) {
             carNaviView.onStop();
         }
         super.onStop();
@@ -193,7 +193,7 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        if(carNaviView!=null){
+        if (carNaviView != null) {
             carNaviView.onResume();
         }
         super.onResume();
@@ -201,7 +201,7 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        if(carNaviView!=null){
+        if (carNaviView != null) {
             carNaviView.onPause();
         }
         super.onPause();
@@ -209,10 +209,10 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        if(tencentCarNaviManager.isNavigating()){
+        if (tencentCarNaviManager.isNavigating()) {
             tencentCarNaviManager.stopSimulateNavi();
         }
-        if(carNaviView!=null){
+        if (carNaviView != null) {
             carNaviView.onDestroy();
         }
         super.onDestroy();

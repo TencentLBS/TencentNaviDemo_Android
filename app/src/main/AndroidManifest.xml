@@ -43,7 +43,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="TencentMapSDK"
-            android:value="您的key" />
+            android:value="你的Key" />
 
         <activity android:name=".IndexActivity">
             <intent-filter>
