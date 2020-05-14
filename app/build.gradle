@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.tencentnavigation.tencentnavidemo"
-        minSdkVersion 22
-        targetSdkVersion 27
+        minSdkVersion 18
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -39,15 +39,19 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
-    implementation 'com.tencent.map:tencent-map-vector-sdk:4.2.9'
-    implementation 'com.tencent.map:tencent-map-nav-sdk:5.1.4.9'
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:support-compat:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'pub.devrel:easypermissions:1.1.0'
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.tencent.map:tencent-map-nav-sync:1.0.5.3'
-
+    // 地图SDK
+    implementation 'com.tencent.map:tencent-map-vector-sdk:4.3.3.5'
+    // 导航SDK
+    implementation 'com.tencent.map:tencent-map-nav-sdk:5.2.0.1'
+    // 定位SDK
+    implementation files('libs/TencentLocationSDK_v8.5.6_r96e440f7_20200430_091724_release.aar')
+    // 司乘同显SDK
+    implementation 'com.tencent.map:tencent-map-nav-sync:1.0.5.6'
 }
