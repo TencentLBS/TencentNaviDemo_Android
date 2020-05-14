@@ -76,14 +76,10 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
         strings.add(getString(R.string.naviline_erase));//11
         strings.add(getResources().getString(R.string.navi_panel_hide));
 
-
-
-
         strings.add(getString(R.string.navi_panel));//12
         strings.add(getString(R.string.navi_panel_style));//13
         strings.add(getString(R.string.navi_speed_style));
         strings.add("司乘同显");   //16
-
 
         strings.add(getString(R.string.navi_addnew_style));   //17
         //新加功能
@@ -93,6 +89,8 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
         strings.add(getString(R.string.navi_turnarrow_hide));
         strings.add(getString(R.string.navi_regionmargin_hide));
         strings.add(getString(R.string.navi_updateExtraPoints_hide));
+
+        strings.add(getResources().getString(R.string.navi_default_ui));
 
         return strings;
     }
@@ -204,6 +202,11 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
                 //在剩余全览模式下,显示在可视区域内开发者传入的坐标点和清除地图中可视区域内的点。
                 Intent updateExtraPoints = new Intent(this, UpdateExtraPointsInVisibleActivity.class);
                 startActivity(updateExtraPoints);
+                break;
+            case 24:
+                // 设置是否使用导航默认UI
+                Intent defaultIntent = new Intent(this, NaviDefaultUi.class);
+                startActivity(defaultIntent);
                 break;
         }
     }

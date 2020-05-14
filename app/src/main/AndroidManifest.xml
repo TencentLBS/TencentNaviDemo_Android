@@ -43,7 +43,10 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="TencentMapSDK"
-            android:value="你的Key" />
+            android:value="你的导航Key" />
+        <meta-data
+            android:name="TencentSynSDK"
+            android:value="你的司乘同显Key" />
 
         <activity android:name=".IndexActivity">
             <intent-filter>
@@ -81,6 +84,7 @@
         <activity android:name=".TurnArrowVisibleActivity" />
         <activity android:name=".VisibleRegionMarginActivity" />
         <activity android:name=".UpdateExtraPointsInVisibleActivity"></activity>
+        <activity android:name=".NaviDefaultUi"/>
     </application>
 
 </manifest>

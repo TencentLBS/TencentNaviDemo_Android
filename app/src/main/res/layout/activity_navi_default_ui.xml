@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.tencent.map.navi.car.CarNaviView
+        android:id="@+id/default_navi_car_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <Button
+        android:id="@+id/show_default_ui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showDefaultUi"
+        android:textSize="16sp"
+        android:textColor="#333"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="12dp"
+        android:text="显示默认Ui"
+        />
+
+    <Button
+        android:id="@+id/hide_default_ui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="hideDefaultUi"
+        android:textSize="16sp"
+        android:textColor="#333"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_below="@id/show_default_ui"
+        android:text="隐藏默认Ui"
+        />
+
+</RelativeLayout>
