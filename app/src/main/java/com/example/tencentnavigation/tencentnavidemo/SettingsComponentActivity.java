@@ -20,6 +20,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.tencent.map.navi.TencentNavi;
 import com.tencent.map.navi.car.DayNightMode;
 import com.tencent.map.navi.car.NaviMode;
 import com.tencent.navi.surport.utils.DeviceUtils;

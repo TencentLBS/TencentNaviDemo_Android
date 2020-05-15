@@ -48,7 +48,7 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
             }
             String name = getItem(position);
             TextView textView = convertView.findViewById(R.id.content);
-            if(!(position == 0||position == 1||position == 2||position == 3||position == 4 || position == 13||position==16||position==17)){
+            if(!(position == 0||position == 1||position == 2||position == 3||position == 4 || position == 13||position==16)){
                 textView.setText("        "+name);
             }else {
                 textView.setText("  "+name);
@@ -79,7 +79,6 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
         strings.add(getString(R.string.navi_panel));//12
         strings.add(getString(R.string.navi_panel_style));//13
         strings.add(getString(R.string.navi_speed_style));
-        strings.add("司乘同显");   //16
 
         strings.add(getString(R.string.navi_addnew_style));   //17
         //新加功能
@@ -89,8 +88,6 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
         strings.add(getString(R.string.navi_turnarrow_hide));
         strings.add(getString(R.string.navi_regionmargin_hide));
         strings.add(getString(R.string.navi_updateExtraPoints_hide));
-
-        strings.add(getResources().getString(R.string.navi_default_ui));
 
         return strings;
     }
@@ -168,45 +165,36 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
                 Intent NaviSpeedStyle = new Intent(this, NaviSpeedStyleActivity.class);
                 startActivity(NaviSpeedStyle);
                 break;
-            case 16:
-                //司乘同显
-                Intent DriverActivity = new Intent(this,DriverPassengerShowActivity .class);
-                startActivity(DriverActivity);
-                break;
-            case 18:
+
+            case 17:
                 //设置用户拖动地图进入回弹模式
                 Intent NaviBounceStyle = new Intent(this, NaviBounceStyleActivity.class);
                 startActivity(NaviBounceStyle);
                 break;
-            case 19:
+            case 18:
                 //设置是否显示小车罗盘marker
                 Intent MarkerVisivle = new Intent(this, CompassMarkerVisibleActivity.class);
                 startActivity(MarkerVisivle);
                 break;
-            case 20:
+            case 19:
                 //设置是否显示电子眼marker
                 Intent EyeMarkerVisivle = new Intent(this, ElectronicEyeMarkerVisibleActivity.class);
                 startActivity(EyeMarkerVisivle);
                 break;
-            case 21:
+            case 20:
                 //设置是否显示地图路线上的白色转向箭头
                 Intent TurnArrowVisivle = new Intent(this, TurnArrowVisibleActivity.class);
                 startActivity(TurnArrowVisivle);
                 break;
-            case 22:
+            case 21:
                 //设置导航路线显示区域距离屏幕四周的边距。
                 Intent VisibleRegionMargin = new Intent(this, VisibleRegionMarginActivity.class);
                 startActivity(VisibleRegionMargin);
                 break;
-            case 23:
+            case 22:
                 //在剩余全览模式下,显示在可视区域内开发者传入的坐标点和清除地图中可视区域内的点。
                 Intent updateExtraPoints = new Intent(this, UpdateExtraPointsInVisibleActivity.class);
                 startActivity(updateExtraPoints);
-                break;
-            case 24:
-                // 设置是否使用导航默认UI
-                Intent defaultIntent = new Intent(this, NaviDefaultUi.class);
-                startActivity(defaultIntent);
                 break;
         }
     }

@@ -24,6 +24,7 @@ import com.tencent.map.navi.data.GpsLocation;
 import com.tencent.map.navi.data.NaviPoi;
 import com.tencent.map.navi.data.NaviTts;
 import com.tencent.map.navi.data.RouteData;
+import com.tencent.map.navi.ui.car.CarNaviInfoPanel;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 
 import java.util.ArrayList;
@@ -42,10 +43,6 @@ public class NaviRealActivity extends AppCompatActivity implements View.OnClickL
     private CarNaviView carNaviView;
 
     private TencentLocationManager locationManager = null;
-
-    private Button stopBtn;
-
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,7 +71,6 @@ public class NaviRealActivity extends AppCompatActivity implements View.OnClickL
 
     private void initManager(){
 
-        stopBtn = findViewById(R.id.navi_stop);
         //实例化TencentCarNaviManager
         tencentCarNaviManager = new TencentCarNaviManager(this);
         carNaviView = findViewById(R.id.carnaviview);
@@ -85,8 +81,36 @@ public class NaviRealActivity extends AppCompatActivity implements View.OnClickL
         //设置导航回调
         tencentCarNaviManager.setNaviCallback(tencentNaviCallback);
 
-        //停止
-        stopBtn.setOnClickListener(this);
+        // 展示默认UI
+        showDefaultUi();
+    }
+
+    /**
+     * 显示默认Ui
+     */
+    private void showDefaultUi() {
+
+        CarNaviInfoPanel carNaviInfoPanel = carNaviView.showNaviInfoPanel();
+        carNaviInfoPanel.setOnNaviInfoListener(new CarNaviInfoPanel.OnNaviInfoListener() {
+            @Override
+            public void onBackClick() {
+                /**
+                 * 退出按钮监听
+                 *
+                 * <p>这里直接结束导航并退出Activity了
+                 */
+                tencentCarNaviManager.stopNavi();
+                finish();
+            }
+        });
+        /**
+         * 可控制默认Ui每部分的显示和隐藏
+         * <pre>
+         *     naviInfoPanleConfig.setButtomPanelEnable(false);
+         * </pre>
+         */
+        CarNaviInfoPanel.NaviInfoPanelConfig naviInfoPanleConfig = new CarNaviInfoPanel.NaviInfoPanelConfig();
+        carNaviInfoPanel.setNaviInfoPanelConfig(naviInfoPanleConfig);
     }
 
     private void initRoute(){

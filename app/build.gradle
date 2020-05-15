@@ -50,8 +50,8 @@ dependencies {
     implementation 'com.tencent.map:tencent-map-vector-sdk:4.3.3.5'
     // 导航SDK
     implementation 'com.tencent.map:tencent-map-nav-sdk:5.2.0.1'
+    // 导航基础库
+    implementation 'com.tencent.map:tencent-map-nav-surport:1.0.2.4'
     // 定位SDK
     implementation files('libs/TencentLocationSDK_v8.5.6_r96e440f7_20200430_091724_release.aar')
-    // 司乘同显SDK
-    implementation 'com.tencent.map:tencent-map-nav-sync:1.0.5.6'
 }
