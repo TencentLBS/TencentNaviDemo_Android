@@ -46,10 +46,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'pub.devrel:easypermissions:1.1.0'
     implementation 'com.google.code.gson:gson:2.8.5'
+    implementation "com.android.support:appcompat-v7:28.0.0"
     // 地图SDK
     implementation 'com.tencent.map:tencent-map-vector-sdk:4.3.3.5'
     // 导航SDK
-    implementation 'com.tencent.map:tencent-map-nav-sdk:5.2.0.1'
+    implementation 'com.tencent.map:tencent-map-nav-sdk:5.2.3.0'
     // 导航基础库
     implementation 'com.tencent.map:tencent-map-nav-surport:1.0.2.4'
     // 定位SDK

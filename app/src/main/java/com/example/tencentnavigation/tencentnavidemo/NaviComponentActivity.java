@@ -523,6 +523,26 @@ public class NaviComponentActivity extends AppCompatActivity {
         public void onGpsRssiChanged(int rssi) {
 
         }
+
+        @Override
+        public void onSmartLocStart() {
+
+        }
+
+        @Override
+        public void onSmartLocEnd() {
+
+        }
+
+        @Override
+        public void onGpsWeakNotify() {
+
+        }
+
+        @Override
+        public void onGpsStrongNotify() {
+
+        }
     };
 
     /**

@@ -72,7 +72,29 @@ public class NaviSpeedStyleActivity extends BaseActivity {
         }
 
         @Override
-        public void onUpdateTraffic(String s, int i, int i1, ArrayList<LatLng> arrayList, ArrayList<TrafficItem> arrayList1, boolean b) {
+        public void onUpdateTraffic(String s, int i, int i1
+                , ArrayList<LatLng> arrayList
+                , ArrayList<TrafficItem> arrayList1, boolean b) {
+
+        }
+
+        @Override
+        public void onSmartLocStart() {
+
+        }
+
+        @Override
+        public void onSmartLocEnd() {
+
+        }
+
+        @Override
+        public void onGpsWeakNotify() {
+
+        }
+
+        @Override
+        public void onGpsStrongNotify() {
 
         }
     };
