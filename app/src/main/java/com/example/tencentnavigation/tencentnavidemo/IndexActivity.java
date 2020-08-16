@@ -48,11 +48,16 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
             }
             String name = getItem(position);
             TextView textView = convertView.findViewById(R.id.content);
-            if(!(position == 0||position == 1||position == 2||position == 3||position == 4 || position == 13||position==16)){
-                textView.setText("        "+name);
-            }else {
-                textView.setText("  "+name);
+
+            if (!(position == 0 || position == 1 || position == 2
+                    || position == 3 || position == 4
+                    || position == 13 || position == 16
+                    || position == 23 || position == 24)) {
+                textView.setText("      "+name); // 父项
+            } else {
+                textView.setText("  "+name);     // 子项
             }
+
             return convertView;
 
         }
@@ -61,26 +66,26 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
     public ArrayList<String> getContents() {
         ArrayList<String>  strings = new ArrayList<>();
 
-        strings.add(getString(R.string.navi_component));
+        strings.add(getString(R.string.navi_component));                                        // index == 0
         strings.add(getString(R.string.route));
         strings.add(getString(R.string.navi_time));
         strings.add(getString(R.string.navi_simu));
 
-        strings.add(getString(R.string.navi_set));//4
+        strings.add(getString(R.string.navi_set));                                    // index == 4
         strings.add(getString(R.string.navimode));
         strings.add(getString(R.string.daynightmode));
         strings.add(getString(R.string.navifuntion));
         strings.add(getString(R.string.navi_default_res));
         strings.add(getString(R.string.navifixing_proportion));
         strings.add(getString(R.string.naviline_width));
-        strings.add(getString(R.string.naviline_erase));//11
+        strings.add(getString(R.string.naviline_erase));
         strings.add(getResources().getString(R.string.navi_panel_hide));
 
-        strings.add(getString(R.string.navi_panel));//12
-        strings.add(getString(R.string.navi_panel_style));//13
+        strings.add(getString(R.string.navi_panel));                   // index == 13
+        strings.add(getString(R.string.navi_panel_style));
         strings.add(getString(R.string.navi_speed_style));
 
-        strings.add(getString(R.string.navi_addnew_style));   //17
+        strings.add(getString(R.string.navi_addnew_style));            // index == 16
         //新加功能
         strings.add(getString(R.string.navi_bounce_style));
         strings.add(getString(R.string.navi_compassmarker_hide));
@@ -88,6 +93,9 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
         strings.add(getString(R.string.navi_turnarrow_hide));
         strings.add(getString(R.string.navi_regionmargin_hide));
         strings.add(getString(R.string.navi_updateExtraPoints_hide));
+
+        strings.add(getString(R.string.navi_ride));                   // index == 23 骑行导航
+        strings.add(getString(R.string.navi_walk));                   // index == 24 步行导航
 
         return strings;
     }
@@ -195,6 +203,16 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
                 //在剩余全览模式下,显示在可视区域内开发者传入的坐标点和清除地图中可视区域内的点。
                 Intent updateExtraPoints = new Intent(this, UpdateExtraPointsInVisibleActivity.class);
                 startActivity(updateExtraPoints);
+                break;
+            case 23:
+                // 骑行导航
+                Intent toNaviRideIntent = new Intent(this, NaviRideActivity.class);
+                startActivity(toNaviRideIntent);
+                break;
+            case 24:
+                // 步行导航
+                Intent toNaviWalkIntent = new Intent(this, NaviWalkActivity.class);
+                startActivity(toNaviWalkIntent);
                 break;
         }
     }

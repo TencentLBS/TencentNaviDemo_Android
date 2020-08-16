@@ -33,6 +33,9 @@
     <string name="navi_regionmargin_hide">设置导航路线显示区域距离屏幕四周的边距</string>
     <string name="navi_updateExtraPoints_hide">设置全览模式坐标点显示/清除地图中可视区域内的点</string>
 
+    <string name="navi_ride">骑行导航</string>
+    <string name="navi_walk">步行导航</string>
+
 
     <string name="url">https://apis.map.qq.com/ws/place/v1/suggestion/?</string>
     <string name="title_activity_eye_marker_visible">EyeMarkerVisibleActivity</string>

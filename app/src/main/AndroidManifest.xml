@@ -77,7 +77,9 @@
         <activity android:name=".ElectronicEyeMarkerVisibleActivity" />
         <activity android:name=".TurnArrowVisibleActivity" />
         <activity android:name=".VisibleRegionMarginActivity" />
-        <activity android:name=".UpdateExtraPointsInVisibleActivity"></activity>
+        <activity android:name=".UpdateExtraPointsInVisibleActivity"/>
+        <activity android:name=".NaviRideActivity"/>
+        <activity android:name=".NaviWalkActivity"/>
     </application>
 
 </manifest>
