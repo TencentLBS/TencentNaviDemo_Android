@@ -17,7 +17,9 @@ import com.tencent.map.navi.TencentRouteSearchCallback;
 import com.tencent.map.navi.car.CarRouteSearchOptions;
 import com.tencent.map.navi.car.TencentCarNaviManager;
 import com.tencent.map.navi.data.NaviPoi;
+import com.tencent.map.navi.data.RouteColors;
 import com.tencent.map.navi.data.RouteData;
+import com.tencent.map.navi.data.TrafficItem;
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdateFactory;
 import com.tencent.tencentmap.mapsdk.maps.SupportMapFragment;
 import com.tencent.tencentmap.mapsdk.maps.TencentMap;
@@ -31,6 +33,7 @@ import com.tencent.tencentmap.mapsdk.maps.model.Polyline;
 import com.tencent.tencentmap.mapsdk.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 路线规划
@@ -149,12 +152,40 @@ public class RouteActivity extends AppCompatActivity {
     private void addRoutes(ArrayList<RouteData> mRouteDatas) {
 
         RouteData routeData = mRouteDatas.get(0);
+        ArrayList<TrafficItem> traffics = getTrafficItemsFromList(routeData.getTrafficIndexList());
+        List<LatLng> mRoutePoints = routeData.getRoutePoints();
+        // 点的个数
+        int pointSize = mRoutePoints.size();
+        // 路段总数 三个index是一个路况单元，分别为：路况级别，起点，终点
+        int trafficSize = traffics.size();
+        // 路段index所对应的颜色值数组
+        int[] trafficColors = new int[pointSize];
+        // 路段index数组
+        int[] trafficColorsIndex = new int[pointSize];
+        int pointStart = 0;
+        int pointEnd = 0;
+        int trafficColor = 0;
+        int index = 0;
+        for (int j = 0; j < trafficSize; j++) {
+            pointStart = traffics.get(j).getFromIndex();
+            pointEnd = traffics.get(j).getToIndex();
+            trafficColor = getTrafficColorByCode(traffics.get(j).getTraffic());
+
+            for (int k = pointStart; k < pointEnd || k == pointSize - 1; k++) {
+                trafficColors[index] = trafficColor;
+                trafficColorsIndex[index] = index;
+                index++;
+            }
+        }
+
         PolylineOptions options = new PolylineOptions()
                 .addAll(routeData.getRoutePoints())
-                .arrow(true);
+                .width(15)
+                .arrow(true)
+                .colors(trafficColors, trafficColorsIndex)
+                .zIndex(10);
 
-        options.color(Color.parseColor("#339933"));
-        tencentMap.addPolyline(options);
+        Polyline polyline = tencentMap.addPolyline(options);
 
     }
     private void zoomToRoute(RouteData routeData) {
@@ -174,5 +205,47 @@ public class RouteActivity extends AppCompatActivity {
         tencentMap = null;
         carNaviManager = null;
         super.onDestroy();
+    }
+
+    private int getTrafficColorByCode(int type) {
+        int color = 0xFFFFFFFF;
+        switch (type) {
+            case 0:
+                // 路况标签-畅通
+                // 绿色
+                color = RouteColors.UNIMPEDED_COLOR;
+                break;
+            case 1:
+                // 路况标签-缓慢
+                // 黄色
+                color = RouteColors.SLOW_COLOR;
+                break;
+            case 2:
+                // 路况标签-拥堵
+                // 红色
+                color = RouteColors.CONGISTION_COLOR;
+                break;
+            case 3:
+                // 路况标签-无路况
+                color = RouteColors.NONE_COLOR;
+                break;
+            case 4:
+                // 路况标签-特别拥堵（猪肝红）
+                color = RouteColors.VERY_CONGISTION_CORY;
+                break;
+        }
+        return color;
+    }
+
+    private ArrayList<TrafficItem> getTrafficItemsFromList(ArrayList<Integer> indexList) {
+        ArrayList<TrafficItem> trafficItems = new ArrayList<>();
+        for (int i = 0; i < indexList.size(); i = i + 3) {
+            TrafficItem item = new TrafficItem();
+            item.setTraffic(indexList.get(i));
+            item.setFromIndex(indexList.get(i + 1));
+            item.setToIndex(indexList.get(i + 2));
+            trafficItems.add(item);
+        }
+        return trafficItems;
     }
 }
