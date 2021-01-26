@@ -3,13 +3,6 @@
 buildscript {
     
     repositories {
-
-        maven{
-            url "https://oss.sonatype.org/content/groups/public"
-        }
-        maven{
-            url "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
         google()
         jcenter()
     }
@@ -23,12 +16,6 @@ buildscript {
 
 allprojects {
     repositories {
-        maven{
-            url "https://oss.sonatype.org/content/groups/public"
-        }
-        maven{
-            url "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
         google()
         jcenter()
     }

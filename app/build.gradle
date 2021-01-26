@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.example.tencentnavigation.tencentnavidemo"
         minSdkVersion 18
@@ -48,32 +48,15 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation "com.android.support:appcompat-v7:28.0.0"
     // 地图SDK
-    implementation 'com.tencent.map:tencent-map-vector-sdk:4.3.3.5'
+    implementation 'com.tencent.map:tencent-map-vector-sdk:4.3.9.9'
     // 导航SDK
-    implementation 'com.tencent.map:tencent-map-nav-sdk:5.2.3.1'
+    implementation 'com.tencent.map:tencent-map-nav-sdk:5.2.5.1'
     // 导航基础库
     implementation 'com.tencent.map:tencent-map-nav-surport:1.0.2.4'
     // 定位SDK
     implementation files('libs/TencentLocationSDK_v8.5.6_r96e440f7_20200430_091724_release.aar')
 
-
-    /** 导航 SDK changelog ****** start *******/
-
-    // 接口文档地址：
+    // 接口文档和接入文档地址：
     // https://tencentmap-mobility.github.io/
-
-    // v5.2.3.1
-    // 1、【ADD】设置导航路线上箭头密度接口
-    // 2、【ADD】设置导航路线颜色值和擦除色
-    // 3、【UPDATE】调整 SDK 提供的默认 UI 控件
-
-    // v5.2.3.0
-    // 1、【ADD】支持步骑行导航
-    // 2、【ADD】算路结果对外提供 segRoadNames 路名字段
-    // 3、【UPDATE】支持在导航过程中，添加 CarNaviView
-    // 4、【ADD】设置拖动地图后能否回弹到之前的状态
-    // 5、【FIX】修复已知 bug
-
-    /** 导航 SDK changelog ****** end   *******/
 
 }

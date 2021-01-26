@@ -143,9 +143,15 @@ public class LocationSearchActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //请求地址
-                String path = getResources().getString(R.string.url)+"region=北京&page_index=1&page_size=10&key=PLTBZ-XCKCW-3Q3RD-OUFHQ-ISO76-JUBGX&keyword="+str;
+                final StringBuilder path = new StringBuilder();
+                path.append(getResources().getString(R.string.url))
+                        .append("region=北京")
+                        .append("&page_index=1")
+                        .append("&page_size=10")
+                        .append("&key=").append(NaviUtil.getAuthKey(getApplicationContext()))
+                        .append("&keyword=").append(str);
                 try {
-                    URL url = new URL(path);
+                    URL url = new URL(path.toString());
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setConnectTimeout(5000);
                     connection.setRequestMethod("GET");
