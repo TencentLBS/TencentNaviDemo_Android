@@ -13,6 +13,7 @@ import com.tencent.map.navi.car.TencentCarNaviManager;
 import com.tencent.map.navi.data.AttachedLocation;
 import com.tencent.map.navi.data.NaviPoi;
 import com.tencent.map.navi.data.NaviTts;
+
 import com.tencent.map.navi.data.RouteData;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 
@@ -45,7 +46,9 @@ public class BaseActivity extends AppCompatActivity {
         carNaviView = findViewById(R.id.carnaviview);
         //添加默认导航面板协议CarnaviView
         tencentCarNaviManager.addNaviView(carNaviView);
+        tencentCarNaviManager.setInternalTtsEnabled(true);
 
+//        tencentCarNaviManager.notify();
         //设置导航回调
         tencentCarNaviManager.setNaviCallback(tencentNaviCallback);
 
@@ -123,6 +126,7 @@ public class BaseActivity extends AppCompatActivity {
 
         }
 
+
         @Override
         public void onRecalculateRouteFailure(int i, int i1, String s) {
             //路线重新规划失败回调
@@ -160,6 +164,7 @@ public class BaseActivity extends AppCompatActivity {
         public void onUpdateRoadType(int i) {
 
         }
+
 
         @Override
         public void onUpdateAttachedLocation(AttachedLocation attachedLocation) {

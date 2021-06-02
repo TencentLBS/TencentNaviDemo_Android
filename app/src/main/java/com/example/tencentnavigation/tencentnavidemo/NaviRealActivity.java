@@ -23,6 +23,7 @@ import com.tencent.map.navi.data.AttachedLocation;
 import com.tencent.map.navi.data.GpsLocation;
 import com.tencent.map.navi.data.NaviPoi;
 import com.tencent.map.navi.data.NaviTts;
+
 import com.tencent.map.navi.data.RouteData;
 import com.tencent.map.navi.ui.car.CarNaviInfoPanel;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
@@ -227,6 +228,7 @@ public class NaviRealActivity extends AppCompatActivity implements View.OnClickL
         public void onRecalculateRouteSuccess(int i, ArrayList<RouteData> arrayList) {
 
         }
+
 
         @Override
         public void onRecalculateRouteFailure(int i, int i1, String s) {

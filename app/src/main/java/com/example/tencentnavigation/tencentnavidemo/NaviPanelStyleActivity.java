@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.tencent.map.navi.INaviView;
 import com.tencent.map.navi.data.NavigationData;
+import com.tencent.map.navi.data.RouteData;
 import com.tencent.map.navi.data.TrafficItem;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 
@@ -116,6 +117,7 @@ public class NaviPanelStyleActivity extends BaseActivity {
 
         }
 
+
         @Override
         public void onSmartLocStart() {
 
@@ -135,5 +137,6 @@ public class NaviPanelStyleActivity extends BaseActivity {
         public void onGpsStrongNotify() {
 
         }
+
     };
 }

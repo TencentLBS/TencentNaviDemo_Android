@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.example.tencentnavigation.tencentnavidemo"
-        minSdkVersion 18
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -51,6 +51,7 @@ dependencies {
     implementation 'com.tencent.map:tencent-map-vector-sdk:4.3.9.9'
     // 导航SDK
     implementation 'com.tencent.map:tencent-map-nav-sdk:5.2.5.1'
+
     // 导航基础库
     implementation 'com.tencent.map:tencent-map-nav-surport:1.0.2.4'
     // 定位SDK

@@ -262,6 +262,7 @@ public class NaviComponentActivity extends AppCompatActivity {
         mTencentCarNaviManager.addNaviView(mINaviView);
         mTencentCarNaviManager.addNaviView(mCarNaviView);
         mTencentCarNaviManager.setNaviCallback(mTencentNaviCallback);
+        mTencentCarNaviManager.setInternalTtsEnabled(true);
     }
 
 
@@ -442,6 +443,7 @@ public class NaviComponentActivity extends AppCompatActivity {
             mRouteIndex = 0;
         }
 
+
         @Override
         public void onPassedWayPoint(int passPointIndex) {
 
@@ -451,6 +453,7 @@ public class NaviComponentActivity extends AppCompatActivity {
         public void onUpdateRoadType(int i) {
 
         }
+
 
         @Override
         public void onUpdateAttachedLocation(AttachedLocation attachedLocation) {
@@ -543,6 +546,7 @@ public class NaviComponentActivity extends AppCompatActivity {
         public void onGpsStrongNotify() {
 
         }
+
     };
 
     /**
