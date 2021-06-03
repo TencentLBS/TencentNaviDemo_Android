@@ -2,9 +2,10 @@ package com.example.tencentnavigation.tencentnavidemo;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -206,8 +207,8 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
                 break;
             case 23:
                 // 骑行导航
-                Intent toNaviRideIntent = new Intent(this, NaviRideActivity.class);
-                startActivity(toNaviRideIntent);
+//                Intent toNaviRideIntent = new Intent(this, NaviRideActivity.class);
+//                startActivity(toNaviRideIntent);
                 break;
             case 24:
                 // 步行导航

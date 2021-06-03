@@ -3,16 +3,13 @@ package com.example.tencentnavigation.tencentnavidemo;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+
+//import android.support.v7.app.ActionBar;
+//import android.support.v7.app.AppCompatActivity;
 import android.text.Layout;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -55,6 +52,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import pub.devrel.easypermissions.EasyPermissions;
 
 
