@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.tencent.map.navi.INaviView;
 import com.tencent.map.navi.data.NavigationData;
 import com.tencent.map.navi.data.RouteData;
+import com.tencent.map.navi.data.RouteTrafficStatus;
 import com.tencent.map.navi.data.TrafficItem;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 
@@ -40,6 +41,31 @@ public class NaviSpeedStyleActivity extends BaseActivity {
     }
 
     private INaviView speedView = new INaviView() {
+        @Override
+        public void onRouteDidChange(RouteData routeData, ArrayList<TrafficItem> arrayList) {
+
+        }
+
+        @Override
+        public void onDeleteBackupRoutes(ArrayList<String> arrayList) {
+
+        }
+
+        @Override
+        public void onAddBackupRoutes(ArrayList<RouteData> arrayList) {
+
+        }
+
+        @Override
+        public void onUpdateTraffic(RouteTrafficStatus routeTrafficStatus) {
+
+        }
+
+        @Override
+        public void onUpdateBackupRoutesTraffic(ArrayList<RouteTrafficStatus> arrayList) {
+
+        }
+
         @Override
         public void onGpsRssiChanged(int i) {
 

@@ -36,7 +36,9 @@ import com.tencent.map.navi.data.AttachedLocation;
 import com.tencent.map.navi.data.GpsLocation;
 import com.tencent.map.navi.data.NaviTts;
 import com.tencent.map.navi.data.NavigationData;
+import com.tencent.map.navi.data.ParallelRoadStatus;
 import com.tencent.map.navi.data.RouteData;
+import com.tencent.map.navi.data.RouteTrafficStatus;
 import com.tencent.map.navi.data.TrafficItem;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 
@@ -389,6 +391,16 @@ public class NaviComponentActivity extends AppCompatActivity {
     private TencentNaviCallback mTencentNaviCallback = new TencentNaviCallback() {
 
         @Override
+        public void onRecalculateRouteSuccessInFence(int i) {
+
+        }
+
+        @Override
+        public void onUpdateParallelRoadStatus(ParallelRoadStatus parallelRoadStatus) {
+
+        }
+
+        @Override
         public void onRecalculateRouteFailure(int type, int errorCode, String errorMessage) {
 
         }
@@ -489,6 +501,32 @@ public class NaviComponentActivity extends AppCompatActivity {
 
     //实现INaviView协议
     private INaviView mINaviView = new INaviView() {
+
+        @Override
+        public void onRouteDidChange(RouteData routeData, ArrayList<TrafficItem> arrayList) {
+
+        }
+
+        @Override
+        public void onDeleteBackupRoutes(ArrayList<String> arrayList) {
+
+        }
+
+        @Override
+        public void onAddBackupRoutes(ArrayList<RouteData> arrayList) {
+
+        }
+
+        @Override
+        public void onUpdateTraffic(RouteTrafficStatus routeTrafficStatus) {
+
+        }
+
+        @Override
+        public void onUpdateBackupRoutesTraffic(ArrayList<RouteTrafficStatus> arrayList) {
+
+        }
+
         @Override
         public void onUpdateNavigationData(NavigationData data) {
             updateLimitSpeedView(data.getLimitSpeed());

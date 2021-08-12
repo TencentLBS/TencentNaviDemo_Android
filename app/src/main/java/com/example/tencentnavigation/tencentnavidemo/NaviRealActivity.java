@@ -24,6 +24,7 @@ import com.tencent.map.navi.data.GpsLocation;
 import com.tencent.map.navi.data.NaviPoi;
 import com.tencent.map.navi.data.NaviTts;
 
+import com.tencent.map.navi.data.ParallelRoadStatus;
 import com.tencent.map.navi.data.RouteData;
 import com.tencent.map.navi.ui.car.CarNaviInfoPanel;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
@@ -209,6 +210,17 @@ public class NaviRealActivity extends AppCompatActivity implements View.OnClickL
      * 导航回调
      */
     private TencentNaviCallback tencentNaviCallback = new TencentNaviCallback() {
+
+        @Override
+        public void onRecalculateRouteSuccessInFence(int i) {
+
+        }
+
+        @Override
+        public void onUpdateParallelRoadStatus(ParallelRoadStatus parallelRoadStatus) {
+
+        }
+
         @Override
         public void onStartNavi() {
 
