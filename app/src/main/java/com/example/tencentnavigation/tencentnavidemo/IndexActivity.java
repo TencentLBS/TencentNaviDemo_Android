@@ -14,9 +14,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.tencentnavigation.tencentnavidemo.location.TnkLocationAdapter;
+
 import java.util.ArrayList;
 
-public class IndexActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class IndexActivity extends BasePermissionActivity implements AdapterView.OnItemClickListener {
 
     private ListView listIndex;
     private myAdpter myadpter;
@@ -26,6 +28,10 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index);
         initListView();
+
+        // 进入导航就开启普适定位
+        TnkLocationAdapter.mTnkLocationSingleton.get().setContext(getApplicationContext());
+        TnkLocationAdapter.mTnkLocationSingleton.get().startTNKLocationAdapter();
     }
 
     public void initListView(){
@@ -103,11 +109,6 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
-            case 0:
-                //导航组件
-                Intent NaviComponent = new Intent(this, RouteComponentActivity.class);
-                startActivity(NaviComponent);
-                break;
             case 1:
                 //路线规划
                 Intent RouteIntent = new Intent(this, RouteActivity.class);

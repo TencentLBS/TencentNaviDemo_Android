@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.tencentnavigation.tencentnavidemo.location.TnkLocationAdapter;
+import com.tencent.map.fusionlocation.model.TencentGeoLocation;
 import com.tencent.map.geolocation.TencentLocation;
 import com.tencent.map.geolocation.TencentLocationListener;
 import com.tencent.map.geolocation.TencentLocationManager;
@@ -34,7 +36,9 @@ import java.util.List;
 
 import pub.devrel.easypermissions.EasyPermissions;
 
-public class NaviRealActivity extends AppCompatActivity implements View.OnClickListener,EasyPermissions.PermissionCallbacks{
+public class NaviRealActivity extends AppCompatActivity
+        implements View.OnClickListener,EasyPermissions.PermissionCallbacks
+        , TnkLocationAdapter.IGeoLocationListeners {
 
     private static final String TAG = "navisdk";
 
@@ -150,36 +154,20 @@ public class NaviRealActivity extends AppCompatActivity implements View.OnClickL
 
     /**
      * 获取GPS信息
-     * @param context
      * @return
      */
-    private int enableGps(Context context) {
-        TencentLocationRequest locationRequest = TencentLocationRequest.create();
-        locationRequest.setInterval(1000);
-        locationRequest.setRequestLevel(TencentLocationRequest.REQUEST_LEVEL_NAME);
-        locationManager = TencentLocationManager.getInstance(context);
-        int error = locationManager.requestLocationUpdates(locationRequest, tencentLocationListener);
-        Log.e(TAG, "enableGps error: " + error);
-        return error;
+    private boolean enableGps() {
+        TnkLocationAdapter.mTnkLocationSingleton.get().addGeoLocationListener(this);
+        return true;
     }
 
-    //腾讯位置监听,给导航SDK传递GPS信息
-    private TencentLocationListener tencentLocationListener = new TencentLocationListener() {
-        @Override
-        public void onLocationChanged(TencentLocation tencentLocation, int i, String s) {
-            if(tencentCarNaviManager!=null) {
-                tencentCarNaviManager.updateLocation(convertToGpsLocation(tencentLocation), i, s);
-            }
+    @Override
+    public void onGeoLocationChanged(TencentGeoLocation tencentGeoLocation) {
+        if(tencentCarNaviManager!=null) {
+            tencentCarNaviManager.updateLocation(convertToGpsLocation(tencentGeoLocation.getLocation()),
+                    tencentGeoLocation.getStatus(), tencentGeoLocation.getReason());
         }
-
-        @Override
-        public void onStatusUpdate(String s, int i, String s1) {
-            if(tencentCarNaviManager!=null){
-                tencentCarNaviManager.updateGpsStatus(s, i, s1);
-            }
-
-        }
-    };
+    }
 
     /**
      * 算路回调
@@ -193,7 +181,7 @@ public class NaviRealActivity extends AppCompatActivity implements View.OnClickL
         @Override
         public void onRouteSearchSuccess(ArrayList<RouteData> arrayList) {
             //开启导航
-            if(enableGps(NaviRealActivity.this) == 0){
+            if(enableGps()){
                 try {
                     tencentCarNaviManager.startNavi(0);
                 } catch (Exception e) {

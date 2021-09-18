@@ -55,8 +55,6 @@
         <activity android:name=".RouteActivity" />
 
         <!-- 导航组件 -->
-        <activity android:name=".RouteComponentActivity" />
-        <activity android:name=".NaviComponentActivity" />
         <activity android:name=".SettingsComponentActivity" />
         <!-- 检索 -->
         <activity android:name=".LocationSearchActivity" />
