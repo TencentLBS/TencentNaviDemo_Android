@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.tencent.map.navi.INaviView;
+import com.tencent.map.navi.data.GuidedLaneInfo;
 import com.tencent.map.navi.data.NavigationData;
 import com.tencent.map.navi.data.RouteData;
 import com.tencent.map.navi.data.RouteTrafficStatus;
@@ -41,6 +42,12 @@ public class NaviSpeedStyleActivity extends BaseActivity {
     }
 
     private INaviView speedView = new INaviView() {
+
+        @Override
+        public void onShowGuidedLaneInfo(GuidedLaneInfo guidedLaneInfo) {
+
+        }
+
         @Override
         public void onRouteDidChange(RouteData routeData, ArrayList<TrafficItem> arrayList) {
 
